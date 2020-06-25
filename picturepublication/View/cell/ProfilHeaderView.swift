@@ -30,6 +30,7 @@ class ProfilHeaderView: UICollectionReusableView {
          ImageLoader().load(stringurl: user.coverImageUrl, imageView: coverImageView)
         
     }
+   
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             print("vide: ")
@@ -50,6 +51,7 @@ class ProfilHeaderView: UICollectionReusableView {
             profilViewController?.presentActionSheet()
         case labeltext:
             print("nickname")
+            profilViewController?.updateNickname()
         default:
             print("default")
         }

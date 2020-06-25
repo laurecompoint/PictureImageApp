@@ -141,7 +141,20 @@
                     <view key="view" contentMode="scaleToFill" id="fmI-bI-Xr8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="publicationimage" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-g8-sEm">
+                                <rect key="frame" x="87.5" y="269.5" width="200" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="AEC-QE-9vU"/>
+                                    <constraint firstAttribute="width" constant="200" id="sRC-3K-QL6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.16078431372549018" green="0.40000000000000002" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qY9-g8-sEm" firstAttribute="centerX" secondItem="fmI-bI-Xr8" secondAttribute="centerX" id="F6q-6h-1N3"/>
+                            <constraint firstItem="qY9-g8-sEm" firstAttribute="centerY" secondItem="fmI-bI-Xr8" secondAttribute="centerY" id="zds-yw-jHd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="El1-5f-Z9r"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Accueil" selectedImage="picto-home" id="Ndb-M4-fxG"/>
@@ -324,7 +337,7 @@
         <scene sceneID="AnP-Jm-xrD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hx6-1B-Izi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profil" id="RSP-vX-IVv"/>
+                    <tabBarItem key="tabBarItem" title="Profil" selectedImage="picto-profile" id="RSP-vX-IVv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ve0-mt-WnR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -346,6 +359,7 @@
         <image name="logout2" width="34" height="28"/>
         <image name="noun_eyes_2315734" width="662" height="476"/>
         <image name="picto-home" width="22" height="22"/>
+        <image name="picto-profile" width="22" height="22"/>
         <image name="publicationimage" width="2267" height="2103"/>
     </resources>
 </document>

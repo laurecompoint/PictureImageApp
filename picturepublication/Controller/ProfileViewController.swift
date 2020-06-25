@@ -58,6 +58,30 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func updateNickname() {
+        guard let uid = FireAuth().currentId else {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+        let alertVC = UIAlertController(title: "Modifier votre pseudo", message: nil, preferredStyle: .alert)
+        alertVC.addTextField { (textField) in
+            textField.placeholder = "Tapez ici votre nouveau pseudo"
+        }
+        alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Modifier", style: .default, handler: { (action) in
+            if let nickname = alertVC.textFields?.first?.text {
+                FireDB().updateUser(withUid: uid, data: ["nickname": nickname]) { (error) in
+                    if let error = error {
+                        self.presentAlert(title: "Erreur !", message: error)
+                        return
+                    }
+                    self.headerView?.labeltext.text = nickname
+                }
+            }
+        }))
+        present(alertVC, animated: true, completion: nil)
+    }
 
 }
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
